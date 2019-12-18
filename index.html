@@ -6,37 +6,55 @@
     <title>Simple four-function calculator</title>
     <meta name="description" content="Simple four-function calculator">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Material Design for Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+      integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX"
+      crossorigin="anonymous"
+    >
+    <!-- end -->
     <link rel="stylesheet" href="./src/styles/style.css">
-  </head>
+    </head>
   <body>
     <main class="main">
       <div class="main__grid">
         <div class="grid-items__screen">0123456789</div>
 
-        <button class="grid-items__clear">C</button>
-        <button class="grid-items__clear-entry">CE</button>
+        <button class="grid-items__clear btn btn-raised btn-danger">C</button>
+        <button class="grid-items__clear-entry btn btn-raised btn-danger">CE</button>
 
-        <button class="grid-items__digit">1</button>
-        <button class="grid-items__digit">2</button>
-        <button class="grid-items__digit">3</button>
-        <button class="grid-items__operator">*</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary">1</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary">2</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary">3</button>
+        <button class="grid-items__operator btn btn-raised btn-info">*</button>
 
-        <button class="grid-items__digit">4</button>
-        <button class="grid-items__digit">5</button>
-        <button class="grid-items__digit">6</button>
-        <button class="grid-items__operator">/</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary">4</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary">5</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary">6</button>
+        <button class="grid-items__operator btn btn-raised btn-info">/</button>
 
-        <button class="grid-items__digit">7</button>
-        <button class="grid-items__digit">8</button>
-        <button class="grid-items__digit">9</button>
-        <button class="grid-items__operator">-</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary">7</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary">8</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary">9</button>
+        <button class="grid-items__operator btn btn-raised btn-info">-</button>
 
-        <button class="grid-items__symbol">,</button>
-        <button class="grid-items__digit">0</button>
-        <button class="grid-items__symbol">=</button>
-        <button class="grid-items__operator">+</button>
+        <button class="grid-items__symbol btn btn-raised btn-secondary">,</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary">0</button>
+        <button class="grid-items__symbol btn btn-raised btn-secondary">=</button>
+        <button class="grid-items__operator btn btn-raised btn-info">+</button>
       </div>
     </main>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+      integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+      integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
+    <!-- end -->
     <script src="./src/javascript/index.js"></script>
     <!-- <script src="./dist/main.js"></script> -->
   </body>

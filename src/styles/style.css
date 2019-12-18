@@ -1,5 +1,12 @@
 @import 'resets.css';
 @font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fBBc9.ttf) format('truetype');
+}
+@font-face {
   font-family: 'Press Start 2P';
   font-style: normal;
   font-weight: 400;
@@ -10,6 +17,7 @@
   height: 40px;
   justify-self: center;
   align-self: center;
+  margin: 0;
 }
 .main {
   width: 100vw;
@@ -17,6 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Roboto', sans-serif;
 }
 .main__grid {
   width: 290px;
@@ -24,18 +33,24 @@
   background-color: lightgray;
   grid-template-columns: repeat(4, 70px);
   grid-template-rows: repeat(6, 50px);
-  box-sizing: border-box;
+  -webkit-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
   padding: 5px;
 }
 .main__grid .grid-items__screen {
-  grid-column: 1 / span 4;
   width: 270px;
-  color: black;
+  grid-column: 1 / span 4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #353535;
   font-family: 'Press Start 2P', cursive;
   background-color: white;
   height: 40px;
   justify-self: center;
   align-self: center;
+  margin: 0;
 }
 .main__grid .grid-items__clear {
   grid-column: 1 / span 2;
@@ -46,25 +61,17 @@
 .main__grid .grid-items__clear,
 .main__grid .grid-items__clear-entry {
   width: 130px;
-  color: white;
-  background-color: red;
   height: 40px;
   justify-self: center;
   align-self: center;
-}
-.main__grid .grid-items__operator {
-  background-color: lightseagreen;
-}
-.main__grid .grid-items__digit,
-.main__grid .grid-items__symbol {
-  background-color: gray;
+  margin: 0;
 }
 .main__grid .grid-items__digit,
 .main__grid .grid-items__operator,
 .main__grid .grid-items__symbol {
   width: 60px;
-  color: white;
   height: 40px;
   justify-self: center;
   align-self: center;
+  margin: 0;
 }
