@@ -1,7 +1,70 @@
+@import 'resets.css';
 @font-face {
   font-family: 'Press Start 2P';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: local('Press Start 2P Regular'), local('PressStart2P-Regular'), url(https://fonts.gstatic.com/s/pressstart2p/v8/e3t4euO8T-267oIAQAu6jDQyK3nVivY.ttf) format('truetype');
+}
+.buttons-common-style {
+  height: 40px;
+  justify-self: center;
+  align-self: center;
+}
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__grid {
+  width: 290px;
+  display: grid;
+  background-color: lightgray;
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: repeat(6, 50px);
+  box-sizing: border-box;
+  padding: 5px;
+}
+.main__grid .grid-items__screen {
+  grid-column: 1 / span 4;
+  width: 270px;
+  color: black;
+  font-family: 'Press Start 2P', cursive;
+  background-color: white;
+  height: 40px;
+  justify-self: center;
+  align-self: center;
+}
+.main__grid .grid-items__clear {
+  grid-column: 1 / span 2;
+}
+.main__grid .grid-items__clear-entry {
+  grid-column: 3 / span 2;
+}
+.main__grid .grid-items__clear,
+.main__grid .grid-items__clear-entry {
+  width: 130px;
+  color: white;
+  background-color: red;
+  height: 40px;
+  justify-self: center;
+  align-self: center;
+}
+.main__grid .grid-items__operator {
+  background-color: lightseagreen;
+}
+.main__grid .grid-items__digit,
+.main__grid .grid-items__symbol {
+  background-color: gray;
+}
+.main__grid .grid-items__digit,
+.main__grid .grid-items__operator,
+.main__grid .grid-items__symbol {
+  width: 60px;
+  color: white;
+  height: 40px;
+  justify-self: center;
+  align-self: center;
 }

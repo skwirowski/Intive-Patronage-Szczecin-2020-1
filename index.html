@@ -6,12 +6,35 @@
     <title>Simple four-function calculator</title>
     <meta name="description" content="Simple four-function calculator">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./src/styles/styles.css">
+    <link rel="stylesheet" href="./src/styles/style.css">
   </head>
   <body>
-    <main>
-      <div class="grid-container">
+    <main class="main">
+      <div class="main__grid">
+        <div class="grid-items__screen">0123456789</div>
 
+        <button class="grid-items__clear">C</button>
+        <button class="grid-items__clear-entry">CE</button>
+
+        <button class="grid-items__digit">1</button>
+        <button class="grid-items__digit">2</button>
+        <button class="grid-items__digit">3</button>
+        <button class="grid-items__operator">*</button>
+
+        <button class="grid-items__digit">4</button>
+        <button class="grid-items__digit">5</button>
+        <button class="grid-items__digit">6</button>
+        <button class="grid-items__operator">/</button>
+
+        <button class="grid-items__digit">7</button>
+        <button class="grid-items__digit">8</button>
+        <button class="grid-items__digit">9</button>
+        <button class="grid-items__operator">-</button>
+
+        <button class="grid-items__symbol">,</button>
+        <button class="grid-items__digit">0</button>
+        <button class="grid-items__symbol">=</button>
+        <button class="grid-items__operator">+</button>
       </div>
     </main>
     <script src="./src/javascript/index.js"></script>

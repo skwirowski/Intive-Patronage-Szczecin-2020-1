@@ -1,3 +1,77 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import './resets.css';
 
+// styling configuration
 @font-family: 'Press Start 2P', cursive;
+@grid-item-width: 70px;
+@grid-item-height: 50px;
+@grid-item-distance: 10px;
+
+.buttons-common-style {
+  height: 40px;
+  justify-self: center;
+  align-self: center;
+}
+
+// styles
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__grid {
+    width: 290px;
+    display: grid;
+    background-color: lightgray;
+    grid-template-columns: repeat(4, @grid-item-width);
+    grid-template-rows: repeat(6, @grid-item-height);
+    box-sizing: border-box;
+    padding: 5px;
+
+    .grid-items {
+      &__screen {
+        grid-column: ~'1 / span 4';
+        width: 4 * @grid-item-width - 10px;
+        color: black;
+        font-family: @font-family;
+        background-color: white;
+        .buttons-common-style();
+      }
+
+      &__clear {
+        grid-column: ~'1 / span 2';
+      }
+
+      &__clear-entry {
+        grid-column: ~'3 / span 2';
+      }
+
+      &__clear,
+      &__clear-entry {
+        width: 130px;
+        color: white;
+        background-color: red;
+        .buttons-common-style();
+      }
+
+      &__operator {
+        background-color: lightseagreen;
+      }
+
+      &__digit,
+      &__symbol {
+        background-color: gray;
+      }
+
+      &__digit,
+      &__operator,
+      &__symbol {
+        width: 60px;
+        color: white;
+        .buttons-common-style();
+      }
+    }
+  }
+}
