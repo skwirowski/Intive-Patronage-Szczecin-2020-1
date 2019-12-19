@@ -1,3 +1,6 @@
+import calculatorStore from './calculatorStore';
+import equalitySignOperation from './equalitySignOperation';
+
 const screen = document.getElementById('screen');
 const clear = document.getElementById('clear');
 const clearEntry = document.getElementById('clear-entry');
@@ -9,17 +12,17 @@ const operatorButtons = document.querySelectorAll('.grid-items__operator');
 // *
 // * CALCULATOR STATE
 // *
-const calculationComponents = {
-  firstOperand: '',
-  firstOperandSeparator: false,
-  operator: '',
-  secondOperand: '',
-  secondOperandSeparator: false,
-  result: 0,
-  entryCleared: false,
-};
+// const calculationComponents = {
+//   firstOperand: '',
+//   firstOperandSeparator: false,
+//   operator: '',
+//   secondOperand: '',
+//   secondOperandSeparator: false,
+//   result: 0,
+//   entryCleared: false,
+// };
 
-screen.innerText = calculationComponents.result;
+screen.innerText = calculatorStore.result;
 
 // document.addEventListener('keyup', event => {
 //   digitButtons.forEach(button => {
@@ -29,56 +32,56 @@ screen.innerText = calculationComponents.result;
 // *
 // * HELPER FUNCTIONS
 // *
-const calculateExpression = (a, b, c) => {
-  const calc = {
-    '+': () => Number(a) + Number(c),
-    '-': () => Number(a) - Number(c),
-    '*': () => Number(a) * Number(c),
-    '/': () => Number(a) / Number(c),
-  };
-  return calc[b]();
-};
+// const calculateExpression = (a, b, c) => {
+//   const calc = {
+//     '+': () => Number(a) + Number(c),
+//     '-': () => Number(a) - Number(c),
+//     '*': () => Number(a) * Number(c),
+//     '/': () => Number(a) / Number(c),
+//   };
+//   return calc[b]();
+// };
 
 // *
 // * EQUALITY SIGN
 // *
-equalitySign.addEventListener('click', () => {
-  calculationComponents.result = calculateExpression(
-    calculationComponents.firstOperand,
-    calculationComponents.operator,
-    calculationComponents.secondOperand
-  );
-  screen.innerText = calculationComponents.result;
+// equalitySign.addEventListener('click', () => {
+//   calculationComponents.result = calculateExpression(
+//     calculationComponents.firstOperand,
+//     calculationComponents.operator,
+//     calculationComponents.secondOperand
+//   );
+//   screen.innerText = calculationComponents.result;
 
-  calculationComponents.firstOperand = calculationComponents.result;
-  calculationComponents.firstOperandSeparator = false;
-  calculationComponents.operator = '';
-  calculationComponents.secondOperand = '';
-  calculationComponents.secondOperandSeparator = false;
-  calculationComponents.entryCleared = false;
+//   calculationComponents.firstOperand = calculationComponents.result;
+//   calculationComponents.firstOperandSeparator = false;
+//   calculationComponents.operator = '';
+//   calculationComponents.secondOperand = '';
+//   calculationComponents.secondOperandSeparator = false;
+//   calculationComponents.entryCleared = false;
 
-  console.log(calculationComponents);
-});
+//   console.log(calculationComponents);
+// });
 
 // *
 // * DIGIT BUTTONS
 // *
-digitButtons.forEach(button => {
-  button.addEventListener('click', event => {
-    const digit = event.target.value;
-    if (calculationComponents.operator) {
-      calculationComponents.secondOperand += digit;
-    } else if (!calculationComponents.firstOperand) {
-      calculationComponents.firstOperand = digit;
-    } else {
-      calculationComponents.firstOperand += digit;
-    }
+// digitButtons.forEach(button => {
+//   button.addEventListener('click', event => {
+//     const digit = event.target.value;
+//     if (calculationComponents.operator) {
+//       calculationComponents.secondOperand += digit;
+//     } else if (!calculationComponents.firstOperand) {
+//       calculationComponents.firstOperand = digit;
+//     } else {
+//       calculationComponents.firstOperand += digit;
+//     }
 
-    console.log(calculationComponents);
-    calculationComponents.entryCleared = false;
-    screen.innerText = `${calculationComponents.firstOperand}${calculationComponents.operator}${calculationComponents.secondOperand}`;
-  });
-});
+//     console.log(calculationComponents);
+//     calculationComponents.entryCleared = false;
+//     screen.innerText = `${calculationComponents.firstOperand}${calculationComponents.operator}${calculationComponents.secondOperand}`;
+//   });
+// });
 
 // *
 // * MATHEMATICAL OPERATORS
