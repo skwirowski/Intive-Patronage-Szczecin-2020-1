@@ -68,7 +68,8 @@
 }
 .main__grid .grid-items__digit,
 .main__grid .grid-items__operator,
-.main__grid .grid-items__symbol {
+.main__grid .grid-items__separator,
+.main__grid .grid-items__equality-sign {
   width: 60px;
   height: 40px;
   justify-self: center;

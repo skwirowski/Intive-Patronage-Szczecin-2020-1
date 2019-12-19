@@ -15,34 +15,34 @@
     >
     <!-- end -->
     <link rel="stylesheet" href="./src/styles/style.css">
-    </head>
+  </head>
   <body>
     <main class="main">
       <div class="main__grid">
-        <div class="grid-items__screen">0123456789</div>
+        <div id="screen" class="grid-items__screen"></div>
 
-        <button class="grid-items__clear btn btn-raised btn-danger">C</button>
-        <button class="grid-items__clear-entry btn btn-raised btn-danger">CE</button>
+        <button id="clear" class="grid-items__clear btn btn-raised btn-danger">C</button>
+        <button id="clear-entry" class="grid-items__clear-entry btn btn-raised btn-danger">CE</button>
 
-        <button class="grid-items__digit btn btn-raised btn-secondary">1</button>
-        <button class="grid-items__digit btn btn-raised btn-secondary">2</button>
-        <button class="grid-items__digit btn btn-raised btn-secondary">3</button>
-        <button class="grid-items__operator btn btn-raised btn-info">*</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary" value="1">1</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary" value="2">2</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary" value="3">3</button>
+        <button class="grid-items__operator btn btn-raised btn-info" value="*">*</button>
 
-        <button class="grid-items__digit btn btn-raised btn-secondary">4</button>
-        <button class="grid-items__digit btn btn-raised btn-secondary">5</button>
-        <button class="grid-items__digit btn btn-raised btn-secondary">6</button>
-        <button class="grid-items__operator btn btn-raised btn-info">/</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary" value="4">4</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary" value="5">5</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary" value="6">6</button>
+        <button class="grid-items__operator btn btn-raised btn-info" value="/">/</button>
 
-        <button class="grid-items__digit btn btn-raised btn-secondary">7</button>
-        <button class="grid-items__digit btn btn-raised btn-secondary">8</button>
-        <button class="grid-items__digit btn btn-raised btn-secondary">9</button>
-        <button class="grid-items__operator btn btn-raised btn-info">-</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary" value="7">7</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary" value="8">8</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary" value="9">9</button>
+        <button class="grid-items__operator btn btn-raised btn-info" value="-">-</button>
 
-        <button class="grid-items__symbol btn btn-raised btn-secondary">,</button>
-        <button class="grid-items__digit btn btn-raised btn-secondary">0</button>
-        <button class="grid-items__symbol btn btn-raised btn-secondary">=</button>
-        <button class="grid-items__operator btn btn-raised btn-info">+</button>
+        <button id="separator" class="grid-items__separator btn btn-raised btn-secondary" value=".">,</button>
+        <button class="grid-items__digit btn btn-raised btn-secondary" value="0">0</button>
+        <button id="equality-sign" class="grid-items__equality-sign btn btn-raised btn-secondary" value="=">=</button>
+        <button class="grid-items__operator btn btn-raised btn-info" value="+">+</button>
       </div>
     </main>
 
