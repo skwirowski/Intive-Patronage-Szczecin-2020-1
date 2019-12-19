@@ -11,8 +11,10 @@ const operatorButtons = document.querySelectorAll('.grid-items__operator');
 // *
 const calculationComponents = {
   firstOperand: '',
+  firstOperandSeparator: false,
   operator: '',
   secondOperand: '',
+  secondOperandSeparator: false,
   result: 0,
   entryCleared: false,
 };
@@ -49,9 +51,10 @@ equalitySign.addEventListener('click', () => {
   screen.innerText = calculationComponents.result;
 
   calculationComponents.firstOperand = calculationComponents.result;
+  calculationComponents.firstOperandSeparator = false;
   calculationComponents.operator = '';
   calculationComponents.secondOperand = '';
-  // calculationComponents.result = '';
+  calculationComponents.secondOperandSeparator = false;
   calculationComponents.entryCleared = false;
 
   console.log(calculationComponents);
@@ -65,11 +68,13 @@ digitButtons.forEach(button => {
     const digit = event.target.value;
     if (calculationComponents.operator) {
       calculationComponents.secondOperand += digit;
+    } else if (!calculationComponents.firstOperand) {
+      calculationComponents.firstOperand = digit;
     } else {
       calculationComponents.firstOperand += digit;
     }
 
-    // console.log(calculationComponents);
+    console.log(calculationComponents);
     calculationComponents.entryCleared = false;
     screen.innerText = `${calculationComponents.firstOperand}${calculationComponents.operator}${calculationComponents.secondOperand}`;
   });
@@ -89,9 +94,10 @@ operatorButtons.forEach(button => {
       );
 
       calculationComponents.firstOperand = calculationComponents.result;
+      calculationComponents.firstOperandSeparator = false;
       calculationComponents.operator = operatorSign;
       calculationComponents.secondOperand = '';
-      // calculationComponents.result = '';
+      calculationComponents.secondOperandSeparator = false;
       calculationComponents.entryCleared = false;
     } else {
       calculationComponents.operator = operatorSign;
@@ -107,8 +113,10 @@ operatorButtons.forEach(button => {
 // *
 clear.addEventListener('click', () => {
   calculationComponents.firstOperand = '';
+  calculationComponents.firstOperandSeparator = false;
   calculationComponents.operator = '';
   calculationComponents.secondOperand = '';
+  calculationComponents.secondOperandSeparator = false;
   calculationComponents.result = 0;
   calculationComponents.entryCleared = false;
 
@@ -122,13 +130,14 @@ clearEntry.addEventListener('click', () => {
   if (!calculationComponents.entryCleared) {
     if (calculationComponents.secondOperand) {
       calculationComponents.secondOperand = '';
+      calculationComponents.secondOperandSeparator = false;
       screen.innerText = `${calculationComponents.firstOperand}${calculationComponents.operator}${calculationComponents.secondOperand}`;
     } else if (calculationComponents.operator) {
       calculationComponents.operator = '';
       screen.innerText = `${calculationComponents.firstOperand}${calculationComponents.operator}${calculationComponents.secondOperand}`;
     } else {
       calculationComponents.firstOperand = calculationComponents.result;
-      // calculationComponents.result = 0;
+      calculationComponents.firstOperandSeparator = false;
       screen.innerText = calculationComponents.firstOperand;
     }
 
@@ -136,3 +145,22 @@ clearEntry.addEventListener('click', () => {
   }
   console.log(calculationComponents);
 });
+
+// *
+// * FLOAT NUMBERS SEPARATOR
+// *
+separator.addEventListener('click', event => {
+  const separatorSign = event.target.value;
+  if (calculationComponents.operator && !calculationComponents.secondOperandSeparator) {
+    calculationComponents.secondOperand += separatorSign;
+    calculationComponents.secondOperandSeparator = true;
+  } else if (!calculationComponents.operator && !calculationComponents.firstOperandSeparator) {
+    calculationComponents.firstOperand += separatorSign;
+    calculationComponents.firstOperandSeparator = true;
+  }
+  screen.innerText = `${calculationComponents.firstOperand}${calculationComponents.operator}${calculationComponents.secondOperand}`;
+});
+
+// TODO: operacje zmiennoprzecinkowe zaokrąglanie wyników
+// TODO: obsługa błędów przy operacjach matematycznych (brak lub niekompletne parametry)
+// TODO: rozwiązać problem za dużej liczby znaków na wyświetlaczu
