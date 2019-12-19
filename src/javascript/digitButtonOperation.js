@@ -1,28 +1,21 @@
-import calculatorStore, { resetClearEntryState, defaultScreenDisplay, changeOperand } from './calculatorStore';
-
-const { operator, firstOperand } = calculatorStore;
-
-const fillInSecondOperand = digit => {
-  calculatorStore.secondOperand += digit;
-};
-
-const fillInFirstOperand = digit => {
-  calculatorStore.firstOperand += digit;
-};
+import calculatorStore, {
+  fillInOperand,
+  changeClearEntryState,
+  defaultScreenDisplay,
+  changeOperand,
+} from './calculatorStore';
 
 export default function digitButtonOperation(event, displayElement) {
   const digit = event.target.value;
 
-  if (operator) {
-    fillInSecondOperand(digit);
-  } else if (!firstOperand) {
+  if (calculatorStore.operator) {
+    fillInOperand('secondOperand', digit);
+  } else if (!calculatorStore.firstOperand) {
     changeOperand('firstOperand', digit);
   } else {
-    fillInFirstOperand(digit);
+    fillInOperand('firstOperand', digit);
   }
+  changeClearEntryState(false);
 
-  console.log(calculatorStore);
-  resetClearEntryState();
-
-  displayElement.innerText = defaultScreenDisplay;
+  displayElement.innerText = defaultScreenDisplay();
 }

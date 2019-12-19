@@ -1,22 +1,27 @@
-import calculatorStore, { changeOperand } from './calculatorStore';
+import calculatorStore, {
+  changeClearEntryState,
+  defaultScreenDisplay,
+  changeOperand,
+  changeOperator,
+  changeSeparator,
+  changeResult,
+} from './calculatorStore';
 import calculateExpression from './calculateExpression';
 
 const resetCalculatorEntries = () => {
-  calculatorStore.firstOperandSeparator = false;
-  calculatorStore.operator = '';
-  calculatorStore.secondOperand = '';
-  calculatorStore.secondOperandSeparator = false;
-  calculatorStore.entryCleared = false;
+  changeSeparator('firstOperandSeparator', false);
+  changeOperator('');
+  changeOperand('secondOperand', '');
+  changeSeparator('secondOperandSeparator', false);
+  changeClearEntryState(false);
 };
 
 export default function equalitySignOperation(displayElement) {
-  const { firstOperand, operator, secondOperand, result } = calculatorStore;
-
-  calculateExpression(firstOperand, operator, secondOperand);
-
-  displayElement.innerText = result;
-  changeOperand('firstOperand', result);
-
+  changeResult(
+    calculateExpression(calculatorStore.firstOperand, calculatorStore.operator, calculatorStore.secondOperand)
+  );
+  changeOperand('firstOperand', calculatorStore.result);
   resetCalculatorEntries();
-  console.log(calculatorStore);
+
+  displayElement.innerText = defaultScreenDisplay();
 }
