@@ -33,8 +33,3 @@ function attachEventListeners() {
 
 setInitialScreenContent();
 attachEventListeners();
-
-// TODO: dodają się znaki do rezultatu
-// TODO: operacje zmiennoprzecinkowe zaokrąglanie wyników
-// TODO: obsługa błędów przy operacjach matematycznych (brak lub niekompletne parametry)
-// TODO: rozwiązać problem za dużej liczby znaków na wyświetlaczu
