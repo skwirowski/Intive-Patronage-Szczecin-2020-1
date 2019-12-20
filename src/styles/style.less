@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import './resets.css';
+
+// styling configuration
+@primary-font-family: 'Roboto', sans-serif;
+@secondary-font-family: 'Press Start 2P', cursive;
+@grid-item-width: 70px;
+@grid-item-height: 50px;
+@grid-item-distance: 10px;
+
+.buttons-common-style {
+  height: 40px;
+  justify-self: center;
+  align-self: center;
+  margin: 0;
+}
+
+// styles
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: @primary-font-family;
+
+  &__grid {
+    width: 290px;
+    display: grid;
+    background-color: lightgray;
+    grid-template-columns: repeat(4, @grid-item-width);
+    grid-template-rows: repeat(6, @grid-item-height);
+    -webkit-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+    padding: 5px;
+
+    .grid-items {
+      &__screen {
+        width: 4 * @grid-item-width - 10px;
+        grid-column: ~'1 / span 4';
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: #353535;
+        font-family: @secondary-font-family;
+        background-color: white;
+        overflow: hidden;
+        .buttons-common-style();
+      }
+
+      &__clear {
+        grid-column: ~'1 / span 2';
+      }
+
+      &__clear-entry {
+        grid-column: ~'3 / span 2';
+      }
+
+      &__clear,
+      &__clear-entry {
+        width: 130px;
+        .buttons-common-style();
+      }
+
+      &__digit,
+      &__operator,
+      &__separator,
+      &__equality-sign {
+        width: 60px;
+        .buttons-common-style();
+      }
+    }
+  }
+}
