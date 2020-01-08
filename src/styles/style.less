@@ -13,6 +13,8 @@
   height: 40px;
   justify-self: center;
   align-self: center;
+  user-select: none;
+  text-transform: none;
   margin: 0;
 }
 
@@ -30,7 +32,7 @@
     display: grid;
     background-color: lightgray;
     grid-template-columns: repeat(4, @grid-item-width);
-    grid-template-rows: repeat(6, @grid-item-height);
+    grid-template-rows: repeat(7, @grid-item-height);
     -webkit-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
     box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
@@ -70,6 +72,12 @@
       &__equality-sign {
         width: 60px;
         .buttons-common-style();
+      }
+
+      &__operator {
+        &--superscript {
+          font-size: 0.8rem;
+        }
       }
     }
   }
