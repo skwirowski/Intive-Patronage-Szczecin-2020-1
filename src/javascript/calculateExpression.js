@@ -8,6 +8,8 @@ const calculateExpression = (firstNum, mathOperator, secondNum) => {
     '-': () => Number(firstOperand) - Number(secondOperand),
     '*': () => Number(firstOperand) * Number(secondOperand),
     '/': () => Number(firstOperand) / Number(secondOperand),
+    '^': () => Number(firstOperand) ** Number(secondOperand),
+    '√': () => Number(firstOperand) ** 1 / Number(secondOperand),
   };
 
   return calculation[operator]();
