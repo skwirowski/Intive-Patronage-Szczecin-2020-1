@@ -16,7 +16,7 @@ const resetCalculatorEntries = () => {
 };
 
 export default function mathOperatorOperation(event, displayElement) {
-  const operatorSign = event.target.value;
+  const operatorSign = event.currentTarget.value;
 
   if (calculatorStore.operator) {
     changeResult(
